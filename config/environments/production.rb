@@ -89,5 +89,10 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+  config.active_record.dump_schema_after_migration = falsek
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { host: 
+    "https://photo-app-2021.herokuapp.com/", protocol: "https" }
 end
