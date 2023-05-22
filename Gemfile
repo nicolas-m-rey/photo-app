@@ -83,3 +83,5 @@ group :test do
   gem "webdrivers"
 end
 
+
+gem "stripe", "~> 8.5"
