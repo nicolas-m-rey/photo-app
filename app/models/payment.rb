@@ -5,8 +5,7 @@ class Payment < ActiveRecord::Base
 
     def self.month_options
 
-        Date::MONTHNAMES.compact.each_with_index.map 
-        { |name, i| ["#{i+1} - #{name}", i+1] }
+        Date::MONTHNAMES.compact.each_with_index.map { |name, i| ["#{i+1} - #{name}", i+1] }
 
     end
 
