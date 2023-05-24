@@ -13,6 +13,7 @@ class ImagesController < ApplicationController
   # GET /images/new
   def new
     @image = Image.new
+    @image = current_user
   end
 
   # GET /images/1/edit
