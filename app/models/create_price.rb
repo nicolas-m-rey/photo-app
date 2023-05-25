@@ -15,7 +15,7 @@ starter_subscription_price = Stripe::Price.create(
     product: starter_subscription['id'],
 )
 
-puts "Success! Here is the starter subscription product ID: #{starter_subscription['id']}"
-puts "Success! Here is the starter subscription price ID: #{starter_subscription_price['id']}"
+# puts "Success! Here is the starter subscription product ID: #{starter_subscription['id']}"
+# puts "Success! Here is the starter subscription price ID: #{starter_subscription_price['id']}"
 
 end
