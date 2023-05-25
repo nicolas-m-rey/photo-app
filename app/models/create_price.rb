@@ -1,3 +1,4 @@
+class CreatePrice < ApplicationRecord
 require 'stripe'
 
 Stripe.api_key = ENV['STRIPE_SECRET_KEY']
@@ -16,3 +17,5 @@ starter_subscription_price = Stripe::Price.create(
 
 puts "Success! Here is the starter subscription product ID: #{starter_subscription['id']}"
 puts "Success! Here is the starter subscription price ID: #{starter_subscription_price['id']}"
+
+end
