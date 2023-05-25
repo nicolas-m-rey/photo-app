@@ -4,7 +4,7 @@ require_relative "application"
 # Initialize the Rails application.
 Rails.application.initialize!
 
-config.action_mailer.delivery_method = :smtp   host = "https://photo-app-rails-7.herokuapp.com/~/."   
+config.action_mailer.delivery_method = { :smtp   host = "https://photo-app-rails-7.herokuapp.com/" } 
 
 config.action_mailer.default_url_options = { host: host, protocol: 'https' }   
 
