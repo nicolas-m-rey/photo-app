@@ -94,8 +94,9 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.active_record.sqlite3_production_warning = false
 
-  config.action_mailer.delivery_method = :smtp => host = 'https://photo-app-rails-7.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }  
+
+  config.action_mailer.default_url_options = { :host => 'https://photo-app-rails-7.herokuapp.com/' }  
+  config.action_mailer.delivery_method = :smtp 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = { 
   :address => 'smtp.gmail.com',
@@ -104,5 +105,7 @@ Rails.application.configure do
   :user_name => ENV['GMAIL_USERNAME'],     
   :password => ENV['GMAIL_PASSWORD'],     
   :domain => 'gmail.com',   
-  :enable_starttls_auto => true }
+  :enable_starttls_auto => true 
+  }
+
 end
