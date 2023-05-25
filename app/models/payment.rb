@@ -24,7 +24,8 @@ class Payment < ActiveRecord::Base
         Stripe::Charge.create customer: customer.id,
         amount: 1200,
         description: 'Premium',
-        currency: 'usd'
+        currency: 'usd',
+        payment_method: 'pm_card_visa'
 
     end
 
