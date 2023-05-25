@@ -5,7 +5,7 @@ require_relative "application"
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {    
-config.action_mailer.delivery_method = :smtp host = 'https://photo-app-rails-7.herokuapp.com'
+config.action_mailer.delivery_method = :smtp => host = 'https://photo-app-rails-7.herokuapp.com'
 config.action_mailer.default_url_options = { host: host }  
 
 # SMTP settings for gmail
