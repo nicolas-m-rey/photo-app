@@ -19,13 +19,19 @@ class Payment < ActiveRecord::Base
 
     def process_payment
 
-        customer = Stripe::Customer.create email: email, card: token
+        #customer = Stripe::Customer.create email: email, card: token
 
-        Stripe::Charge.create customer: customer.id,
-        amount: 1200,
-        description: 'Premium',
-        currency: 'usd',
-        payment_method: 'pm_card_visa'
+        #Stripe::Charge.create customer: customer.id,
+        #amount: 1200,
+        #description: 'Premium',
+        #currency: 'usd',
+        #payment_method: 'visa'
+
+        Stripe::PaymentIntent.create({
+            amount: 1000,
+            currency: 'usd',
+            payment_method: 'pm_card_visa',
+        })
 
     end
 
