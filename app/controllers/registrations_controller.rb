@@ -37,6 +37,16 @@ class RegistrationsController < Devise::RegistrationsController
         end
     end
 
+    private
+
+    #def after_sign_up_path_for(resource)
+    #    'images_path'
+    #end
+
+    #def after_inactive_sign_up_path_for(resource)
+    #    'images_path'
+    #end
+
     protected
 
     def configure_permitted_parameters

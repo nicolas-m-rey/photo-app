@@ -12,6 +12,8 @@
 
   <body>
     <%= render 'layouts/navigation' %>
+    <%= notice if notice %>
+    <%= alert if alert %>
     <%= yield %>
   </body>
 </html>

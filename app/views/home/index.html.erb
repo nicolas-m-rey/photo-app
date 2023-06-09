@@ -1,6 +1,10 @@
 <% if current_user %>
+
   <h3>Welcome: <%= current_user.email %></h3>
+  <%= link_to "Sign out", destroy_user_session_path, 'data-turbo-method': :delete %>
+
 <% else %>
+
   <div class="jumbotron">
     <h2>Welcome to the Photo Management App!</h2>
     <p class="lead">
