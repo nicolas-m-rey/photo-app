@@ -94,18 +94,25 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.active_record.sqlite3_production_warning = false
 
-
+  # Set the default host for mailer
   config.action_mailer.default_url_options = { :host => 'https://photo-app-rails-7.herokuapp.com/' }  
   config.action_mailer.delivery_method = :smtp 
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = { 
-  :address => 'smtp.gmail.com',
-  :port => '587',
-  :authentication => :plain,
-  :user_name => ENV['GMAIL_USERNAME'],     
-  :password => ENV['GMAIL_PASSWORD'],     
-  :domain => 'gmail.com',   
-  :enable_starttls_auto => true 
+
+  # SMTP settings for mailertogo
+  mailertogo_host     = ENV.fetch("MAILERTOGO_SMTP_HOST")
+  mailertogo_port     = ENV.fetch("MAILERTOGO_SMTP_PORT", 587)
+  mailertogo_user     = ENV.fetch("MAILERTOGO_SMTP_USER")
+  mailertogo_password = ENV.fetch("MAILERTOGO_SMTP_PASSWORD")
+  mailertogo_url   = ENV.fetch("MAILERTOGO_URL")
+  
+  config.action_mailer.smtp_settings = {
+    :address              => mailertogo_host,
+    :port                 => mailertogo_port,
+    :user_name            => mailertogo_user,
+    :password             => mailertogo_password,
+    :domain               => mailertogo_domain,
+    :authentication       => :plain,
+    :enable_starttls_auto => true,
   }
 
 end
