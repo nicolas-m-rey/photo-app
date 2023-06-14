@@ -13,7 +13,7 @@ class ImagesController < ApplicationController
   # GET /images/new
   def new
     @image = Image.new
-    @image = current_user
+    @image.user_id = current_user.id
   end
 
   # GET /images/1/edit
@@ -29,7 +29,7 @@ class ImagesController < ApplicationController
         format.html { redirect_to image_url(@image), notice: "Image was successfully created." }
         format.json { render :show, status: :created, location: @image }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity, notice: "Image was not successfully created." }
         format.json { render json: @image.errors, status: :unprocessable_entity }
       end
     end

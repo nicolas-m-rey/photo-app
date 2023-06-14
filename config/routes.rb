@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  resources :images
-  devise_for :users, :controllers => { :registrations => 'registrations' }
-  get 'home/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
-   root "home#index"
+  root "home#index"
+
+  # Defines the routes for the images controller
+  resources :images
+  post 'images/create'
+
+  # Defines devise_for routes for users
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+
+  
+  
 end
 

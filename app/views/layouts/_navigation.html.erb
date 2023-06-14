@@ -25,6 +25,12 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        <li class="nav-item">
+          <% if !user_signed_in? %>
+            <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %>
+          <% else %>
+             <%= link_to "Sign out", destroy_user_session_path, 'data-turbo-method': :delete, class: 'btn btn-danger logout' %>
+          <% end %>
       </ul>
     </div>
   </div>
