@@ -110,7 +110,7 @@ Rails.application.configure do
     :port                 => mailertogo_port,
     :user_name            => mailertogo_user,
     :password             => mailertogo_password,
-    :domain               => mailertogo_domain,
+    :domain               => mailertogo_url,
     :authentication       => :plain,
     :enable_starttls_auto => true,
   }
