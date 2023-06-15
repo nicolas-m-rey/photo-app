@@ -4,7 +4,6 @@ class ImagesController < ApplicationController
   # GET /images or /images.json
   def index
     @images = Image.all
-    @image.user_id = current_user.id
   end
 
   # GET /images/1 or /images/1.json
