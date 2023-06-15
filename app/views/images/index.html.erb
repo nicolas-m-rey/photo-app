@@ -15,9 +15,9 @@
 
       <tbody>
         <% @images.each do |image| %>
-          <% if image.user_id = @user %>
+          
             <tr>
-              <td><%= link_to image.name, image_path(image) %></td>
+              <td><%= link_to image.user_id, image_path(image) %></td>
               <td><%= image_tag image.picture.url, size: "100x100" %></td>
               <td>
                   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -26,7 +26,7 @@
                       :class => 'btn btn-xs btn-danger' %>
               </td>
             </tr>
-          <% end %>
+          
         <% end %>
       </tbody>
 
