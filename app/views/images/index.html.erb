@@ -9,7 +9,6 @@
 
       <tbody>
         <% @images.each do |image| %>
-          <% if current_user = image.id %>
             <tr>
               <td><%= link_to image.name, image_path(image) %></td>
               <td><%= image_tag image.picture.url, size: "100x100" %></td>
@@ -18,8 +17,7 @@
                       image_path(image), :method => :delete,
                       :class => 'btn btn-xs btn-danger' %>
               </td>
-            </tr>
-          
+            </tr>          
         <% end %>
       </tbody>
 
