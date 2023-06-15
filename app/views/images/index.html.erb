@@ -14,7 +14,7 @@
     </thead>
 
 <%# show only for current user %>
-  <% if @image.user_id = current_user.id %>
+  <% if @images.user_id = @user %>
 
     <tbody>
       <% @images.each do |image| %>
