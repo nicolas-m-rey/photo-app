@@ -13,6 +13,9 @@
       </tr>
     </thead>
 
+<%# show only for current user %>
+  <% if @image.user_id = current_user.id %>
+
     <tbody>
       <% @images.each do |image| %>
         <tr>
@@ -27,6 +30,7 @@
         </tr>
       <% end %>
     </tbody>
+  <% end %>
   </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")), new_image_path, :class => 'btn btn-primary' %>
