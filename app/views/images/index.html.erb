@@ -9,14 +9,13 @@
 
       <tbody>
         <% @images.each do |image| %>
-          
+          <% if current_user = image.id %>
             <tr>
               <td><%= link_to image.name, image_path(image) %></td>
               <td><%= image_tag image.picture.url, size: "100x100" %></td>
               <td>
-                  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      image_path(image), :method => :delete, :data => { :confirm => t('.confirm', 
-                      :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  <%= button_to ('Destroy'),
+                      image_path(image), :method => :delete,
                       :class => 'btn btn-xs btn-danger' %>
               </td>
             </tr>
@@ -28,4 +27,4 @@
 
   </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")), new_image_path, :class => 'btn btn-primary' %>
+<%= link_to ('New'), new_image_path, :class => 'btn btn-primary' %>
